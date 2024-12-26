@@ -1,8 +1,11 @@
 {
     "version": 2,
     "functions": {
-      "api/*.py": {
+      "api/outlook/**/*.py": {
         "runtime": "python3.10"
       }
-    }
-  }
+    },
+    "routes": [
+      { "src": "/api/outlook/(.*)", "dest": "/api/outlook/$1" }
+    ]
+}
