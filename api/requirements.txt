@@ -6,5 +6,6 @@ numpy==1.26.4
 pandas==2.2.1
 scikit-learn==1.4.1.post1
 yfinance==0.2.37
-tensorflow-cpu==2.15.0
 Werkzeug==3.0.1
+tensorflow==2.18.0
+tensorflow-io-gcs-filesystem==0.37.1
