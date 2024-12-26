@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0 0;
+  --foreground: 229 231 235;
+  --card: 18 18 18;
+  --card-foreground: 243 244 246;
+  --primary: 37 99 235;
+  --primary-hover: 29 78 216;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-gray-100 
+    placeholder-gray-500 transition-all duration-200
+    focus:ring-2 focus:ring-blue-600 focus:border-transparent
+    hover:border-zinc-700 shadow-sm;
+  height: 48px;
+}
+
+.label-field {
+  @apply block text-sm font-medium text-gray-300 mb-2;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.submit-button {
+  @apply relative overflow-hidden py-3 px-4 rounded-lg text-sm font-semibold 
+    transition-all duration-300 transform shadow-md hover:shadow-lg;
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  color: #ffffff !important; /* Ensure white text */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Add subtle text shadow for better contrast */
+}
+
+.submit-button:not(:disabled):hover {
+  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  color: #ffffff !important;
+}
+
+.submit-button:disabled {
+  @apply bg-zinc-800 cursor-not-allowed opacity-75;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.glass-card {
+  @apply bg-zinc-900 shadow-2xl rounded-2xl border border-zinc-800;
+  max-width: 90%;
+  width: 800px;
+  margin: 2rem auto;
+  backdrop-filter: blur(16px);
+}
+
+.stat-card {
+  @apply p-6 text-center transform transition-all duration-300 rounded-xl border border-zinc-800;
+  background: rgba(24, 24, 27, 0.6);
+}
+
+.loading-spinner {
+  @apply relative w-12 h-12;
+}
+
+.spinner-ring {
+  @apply absolute inset-0 rounded-full border-2 border-transparent border-t-blue-600
+    animate-spin;
+}
+
+.spinner-core {
+  @apply absolute inset-[6px] rounded-full border-2 border-zinc-800;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% center; }
+  100% { background-position: -200% center; }
+}
+
+.animate-gradient {
+  background: linear-gradient(
+    to right,
+    #2563eb,
+    #3b82f6,
+    #1d4ed8,
+    #2563eb
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 4s linear infinite;
+}
+
+/* Error and success states */
+.bg-red-50 {
+  @apply bg-red-900/10;
+}
+
+.text-red-800 {
+  @apply text-red-200;
+}
+
+.text-red-600 {
+  @apply text-red-300;
+}
+
+.border-red-200 {
+  @apply border-red-900;
+}
+
+.bg-gray-50 {
+  @apply bg-zinc-900;
+}
+
+.text-gray-600 {
+  @apply text-gray-300;
+}
+
+.border-gray-200 {
+  @apply border-zinc-800;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(24 24 27);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(39 39 42);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(63 63 70);
+}
