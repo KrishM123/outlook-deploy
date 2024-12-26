@@ -1,11 +1,11 @@
 {
     "version": 2,
     "functions": {
-      "api/outlook/**/*.py": {
+      "api/*.py": {
         "runtime": "@vercel/python@3.1.0"
       }
     },
     "routes": [
-      { "src": "/api/outlook/(.*)", "dest": "/api/outlook/$1" }
+      { "src": "/api/(.*)", "dest": "/api/$1" }
     ]
 }
